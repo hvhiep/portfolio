@@ -1,0 +1,28 @@
+.wrapper {
+    width: 100%;
+    height: var(--header-height);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.inner {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo, a:visited {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+.nav {
+}
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav__link:hover {
+    color: var(--first-color);
+}

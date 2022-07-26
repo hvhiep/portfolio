@@ -1,0 +1,63 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner {
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*=============== 1.BANNER ===============*/
+.banner {
+    display: flex;
+}
+
+.bannerBtnWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bannerBtn {
+    margin: 5px 0px;
+}
+.bannerContent {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    background-color: grey;
+    padding: 0 8%;
+}
+.bannerTextWrapper {
+    width: 50%;
+    h1 {
+        margin-bottom: 10px;
+    }
+    h4 {
+        margin-bottom: 5px;
+    }
+    h4 ~ span {
+        margin-bottom: 10px;
+    }
+}
+.bannerTextScrollDown {
+    width: 50%;
+
+}
+
+.image {
+    width: 300px;
+    fill: var(--first-color);
+}
+.imageMaskImage {
+    width: 170px;
+}
+/*=============== 2.ABOUT ===============*/
+/*=============== 3.EDUCATION ===============*/
+/*=============== 4.SKILLS ===============*/
+/*=============== 5.PROJECTS ===============*/
+/*=============== 6.CONTACTME ===============*/
+

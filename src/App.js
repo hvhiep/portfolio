@@ -1,16 +1,15 @@
-import Heading from './components/Heading';
-import GlobalStyles from './components/GlobalStyles';
-import './App.css';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 function App() {
-  return (
-    <GlobalStyles>
-      <div>
-        <Heading />
-        <h1>APP</h1>
-      </div>
-    </GlobalStyles>
-  );
+    return (
+        <BrowserRouter>
+            <div className='app'>
+                <Routes>
+                    <Route path='/' element={<Home />}/>
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
