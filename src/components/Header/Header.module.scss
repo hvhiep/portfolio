@@ -7,6 +7,12 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    transition-duration: 0.4s;
+}
+
+.active {
+    background-color: var(--body-color-darker);
+
 }
 .inner {
     width: 80%;

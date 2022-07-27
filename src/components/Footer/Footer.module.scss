@@ -1,7 +1,33 @@
 .wrapper {
     width: 100%;
     height: var(--footer-height);
-    background-color: aquamarine;
+    background-color: var(--body-color-darker);
 }
 .inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    .bannerBtnWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bannerBtn {
+        margin: 0px 10px;
+    }
+    .title {
+        font-size: var(--h2-font-size);
+        font-weight: var(--font-semi-bold);
+        color: var( --title-color);
+        margin-bottom: 5px;
+    }
+    .subtitle {
+        margin-bottom: 10px;
+    }
+    .copyright {
+        font-size: var(--small-font-size);
+        margin-top: 10px;
+    }
 }
