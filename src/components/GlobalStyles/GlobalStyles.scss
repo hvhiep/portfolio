@@ -85,8 +85,8 @@ img {
     height: auto;
 }
 
-button {
-    display: block;
+.btnLink {
+    display: inline-block;
     font-family: 'Montserrat', sans-serif;
     border: none;
     text-align: center;
@@ -98,11 +98,14 @@ button {
     padding: 12px 8px;
     border-radius: 5px;
 
-    span {
-        margin-right: 7px;
+    div {
+        margin: 0;
+        span {
+            margin-right: 8px;
+        }
     }
 }
-button:hover {
+.btnLink:hover {
     background-color: var(--first-color-alt);
 }
 

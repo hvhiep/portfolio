@@ -3,7 +3,20 @@ import clsx from 'clsx';
 import styles from './Content.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faMouse, faArrowDown, faPaperPlane, faCertificate } from '@fortawesome/free-solid-svg-icons';
+import {
+    faMouse,
+    faArrowDown,
+    faPaperPlane,
+    faCertificate,
+    faUserGroup,
+    faGears,
+    faStar,
+    faVideo,
+    faDownload,
+    faPhone,
+    faEnvelope,
+    faLocationDot,
+} from '@fortawesome/free-solid-svg-icons';
 function Content() {
     const bannerBtns = [
         {
@@ -19,14 +32,170 @@ function Content() {
             link: 'https://github.com/hvhiep',
         },
     ];
+    const skills = [
+        {
+            url: './assets/html.png',
+            title: 'HTML',
+        },
+        {
+            url: './assets/css.png',
+            title: 'CSS',
+        },
+        {
+            url: './assets/javascript.png',
+            title: 'Javascript',
+        },
+        {
+            url: './assets/reactjs.png',
+            title: 'ReactJS',
+        },
+        {
+            url: './assets/reactnative.png',
+            title: 'React Native',
+        },
+        {
+            url: './assets/firebase.png',
+            title: 'Firebase',
+        },
+        {
+            url: './assets/github.png',
+            title: 'Github',
+        },
+        {
+            url: './assets/figma.png',
+            title: 'Figma',
+        },
+    ];
+
+    const projects = [
+        {
+            timeline: '18/04/2022 - 14/07/2022',
+            name: 'Gita',
+            desc: 'Ứng dụng mua bán đàn guitar online',
+            images: [
+                './assets/phone/gita1.png',
+                './assets/phone/gita2.png',
+                './assets/phone/gita3.png',
+                './assets/phone/gita4.png',
+            ],
+            member: '1 (Dự án cá nhân)',
+            technologies: 'React Native, Firebase (Firestore, Authentication, Storage)',
+            features: [
+                'Đăng ký, đăng nhập bằng Firebase Authentication',
+                'Tìm kiếm đàn guitar theo tên, giảm giá, số lượng bán',
+                'Đặt hàng và theo dõi trạng thái đơn hàng (Người mua)',
+                'Quản lý sản phẩm, xác nhận đơn hàng (Người bán)',
+                'Thống kê doanh thu, lợi nhuận (Người bán)',
+            ],
+            githubURL: 'https://github.com/hvhiep/Gita',
+            demoURL: 'https://youtu.be/Qy9q5eeDPuw',
+        },
+        {
+            timeline: '19/10/2021  -  18/12/2021',
+            name: 'Kalos',
+            desc: 'Ứng dụng tập thể dục tại nhà',
+            images: [
+                './assets/phone/kalos1.png',
+                './assets/phone/kalos2.png',
+                './assets/phone/kalos3.png',
+                './assets/phone/kalos4.png',
+            ],
+            member: '4 (Đồ án môn học)',
+            technologies: 'React Native, Mongodb',
+            features: [
+                'Đăng ký/đăng nhập',
+                'Quản lý lộ trình tập (gồm nhiều bài tập tính thời gian)',
+                'Quản lý video hướng dẫn, bài tập yêu thích',
+                'Quản lý thông số luyện tập (BMI, chiều cao, cân nặng)',
+                'Quản lý bài tập (tìm kiếm, lọc theo nhóm)',
+            ],
+            githubURL: 'https://github.com/hvhiep/Kalos',
+            demoURL: '',
+        },
+    ];
+
+    const Button = ({ title, icon, link, download }) => {
+        return (
+            <a
+                className="btnLink"
+                href={link}
+                target={link.includes('#') ? '_self' : '_blank'}
+                rel="noreferrer"
+                download={download}
+            >
+                <div>
+                    <span>{title}</span>
+                    <FontAwesomeIcon icon={icon} />
+                </div>
+            </a>
+        );
+    };
+
+    const ProjectItem = ({ item }) => {
+        return (
+            <div key={item.name} className={styles.project__item}>
+                <h4 className={styles.project__itemTimeline}>{item.timeline}</h4>
+                <div>
+                    {/* left content */}
+                    <div className={styles.project__itemLeftWrapper}>
+                        {/* image list */}
+                        {item.images.map((url) => (
+                            <img key={url} src={url} alt="project img" />
+                        ))}
+                    </div>
+                    {/* right content */}
+                    <div className={styles.project__itemRightWrapper}>
+                        <div className={styles.stickyContent}>
+                            <h1>{item.name}</h1>
+                            <h4>{item.desc}</h4>
+                            <div className={styles.project__itemRightTextGroup}>
+                                <FontAwesomeIcon className={styles.project__itemTextIcon} icon={faUserGroup} />
+                                <span>
+                                    <span className={styles.bold}>Thành viên:</span> {item.member}
+                                </span>
+                            </div>
+                            <div className={styles.project__itemRightTextGroup}>
+                                <FontAwesomeIcon className={styles.project__itemTextIcon} icon={faGears} />
+                                <span>
+                                    <span className={styles.bold}>Công nghệ:</span> {item.technologies}
+                                </span>
+                            </div>
+                            <ul>
+                                <FontAwesomeIcon className={styles.project__itemTextIcon} icon={faStar} />
+                                <span className={styles.bold}>Tính năng: </span>
+                                {item.features.map((feature) => {
+                                    return (
+                                        <li key={feature}>
+                                            <span>{feature}</span>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                            <div className={styles.project__itemBtnWrapper}>
+                                <Button title="Github" icon={faGithub} link={item.githubURL} />
+
+                                {item.demoURL ? <Button title="Demo" icon={faVideo} link={item.demoURL} /> : null}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    };
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.inner}>
-                <div className={clsx('section', styles.banner)}>
+                <div id="home" className={clsx('section', styles.banner)}>
                     <div className={styles.bannerBtnWrapper}>
                         {bannerBtns.map((item, index) => (
-                            <a key={index} className={styles.bannerBtn} href={item.link} target="_blank">
+                            <a
+                                key={index}
+                                className={styles.bannerBtn}
+                                href={item.link}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <FontAwesomeIcon icon={item.icon} color="white" size="2x" />
                             </a>
                         ))}
@@ -41,10 +210,10 @@ function Content() {
                                     Fresh level experience in web and mobile design Fresh level experience in web and
                                     mobile design Fresh level experience in web and mobile design
                                 </span>
-                                <button>
-                                    <span>Contact Me</span>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
-                                </button>
+                                <div>
+                                    <Button title="Contact Me" icon={faPaperPlane} link="#contactme" />
+                                    <Button title="Download CV" icon={faDownload} link="./assets/cv.pdf" download />
+                                </div>
                             </div>
                             <div className={styles.bannerTextScrollDown}>
                                 <FontAwesomeIcon className={styles.scrollDownIcon} icon={faMouse} />
@@ -64,12 +233,12 @@ function Content() {
                         </svg>
                     </div>
                 </div>
-                <div className={clsx('section')}>
+                <div id="education" className={clsx('section')}>
                     <div className={clsx('section__title')}>Education</div>
                     <div className={clsx('section__subtitle')}>My personal journey</div>
                     <div className={styles.content}>
                         <div className={styles.education__imageWrapper}>
-                            <img src='./assets/uit.jpg' />
+                            <img src="./assets/uit.jpg" alt="university" />
                         </div>
                         <div className={styles.education__textWrapper}>
                             <span>27/08/2018 - NOW</span>
@@ -87,10 +256,52 @@ function Content() {
                         </div>
                     </div>
                 </div>
-                <div className={clsx('section')}>
+                <div id="skills" className={clsx('section')}>
                     <div className={clsx('section__title')}>Skills</div>
-                    <div className={clsx('section__subtitle')}>My Introduction</div>
-                    <div className={styles.content}></div>
+                    <div className={clsx('section__subtitle')}>My speciality</div>
+                    <div className={styles.content}>
+                        <div className={styles.skillWrapper}>
+                            {skills.map((item, index) => {
+                                return (
+                                    <div key={index} className={styles.skillItem}>
+                                        <img src={item.url} alt="skill" />
+                                        <span>{item.title}</span>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+                <div id="projects" className={clsx('section')}>
+                    <div className={clsx('section__title')}>Projects</div>
+                    <div className={clsx('section__subtitle')}>Most recent work</div>
+                    <div className={clsx(styles.content, styles.projectWrapper)}>
+                        {/* project list */}
+                        {projects.map((item) => (
+                            <ProjectItem key={item.name} item={item} />
+                        ))}
+                    </div>
+                </div>
+                <div id="contactme" className={clsx('section')}>
+                    <div className={clsx('section__title')}>Contact Me</div>
+                    <div className={clsx('section__subtitle')}>Get in touch</div>
+                    <div className={styles.content}>
+                        <div className={styles.contact__item}>
+                            <FontAwesomeIcon className={styles.contact__itemIcon} icon={faPhone} size="2x" />
+                            <div className={styles.contact__itemTextTitle}>Call Me</div>
+                            <div>0356562378</div>
+                        </div>
+                        <div className={styles.contact__item}>
+                            <FontAwesomeIcon className={styles.contact__itemIcon} icon={faEnvelope} size="2x" />
+                            <div className={styles.contact__itemTextTitle}>Email</div>
+                            <div>hvhiep14.8@gmail.com</div>
+                        </div>
+                        <div className={styles.contact__item}>
+                            <FontAwesomeIcon className={styles.contact__itemIcon} icon={faLocationDot} size="2x" />
+                            <div className={styles.contact__itemTextTitle}>Location</div>
+                            <div>Tp. Ho Chi Minh</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -49,6 +49,11 @@
             display: block;
             margin-bottom: 25px;
         }
+        div {
+            a:first-child {
+                margin-right: 20px;
+            }
+        }
     }
 }
 .bannerTextScrollDown {
@@ -73,17 +78,13 @@
     width: 170px;
 }
 
+// dùng chung
 .content {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-
-    // background-color: aquamarine;
 }
 /*=============== 2.EDUCATION ===============*/
 .education__imageWrapper {
-    display: flex;
-    align-items: center;
     width: 45%;
     img {
         width: 70%;
@@ -91,7 +92,6 @@
     }
 }
 .education__textWrapper {
-    align-self: center;
     span {
         font-size: var(--normal-font-size);
     }
@@ -113,5 +113,139 @@
     }
 }
 /*=============== 3.SKILLS ===============*/
+.skillWrapper {
+    width: 100%;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.skillItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    span {
+        display: block;
+        font-weight: var(--font-medium);
+    }
+}
 /*=============== 4.PROJECTS ===============*/
+.projectWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.project__item {
+    width: 80%;
+    position: relative;
+    padding: 0 30px;
+    margin-bottom: 30px;
+    .project__itemTimeline {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    h4 ~ div {
+        display: flex;
+    }
+}
+
+// timeline dọc cho từng project
+.project__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background-color: white;
+}
+.project__item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+// list ảnh của project
+.project__itemLeftWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    img {
+        width: 250px;
+        margin-bottom: 10px;
+    }
+}
+// thông tin của project
+.project__itemRightWrapper {
+    width: 50%;
+    h1 {
+        margin-bottom: 20px;
+    }
+    h4 {
+        font-weight: var(--font-medium);
+        margin-bottom: 10px;
+    }
+    .project__itemRightTextGroup {
+        margin-bottom: 10px;
+    }
+    .project__itemTextIcon {
+        color: white;
+        margin-right: 5px;
+    }
+    ul {
+        margin-bottom: 10px;
+        list-style: circle;
+        list-style-position: inside;
+        li {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+    }
+    .bold {
+        font-weight: var(--font-semi-bold);
+    }
+    .project__itemBtnWrapper {
+        margin-top: 50px;
+        a:first-child {
+            margin-right: 20px;
+        }
+    }
+}
+
+.stickyContent {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: calc(var(--header-height) + 10px);
+}
+
 /*=============== 5.CONTACTME ===============*/
+.contact__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 3rem;
+    .contact__itemIcon {
+        margin-bottom: 10px;
+        color: var(--first-color);
+    }
+    .contact__itemTextTitle {
+        color: var(--title-color);
+        font-size: var(--h3-font-size);
+        margin-bottom: 15px;
+    }
+}
