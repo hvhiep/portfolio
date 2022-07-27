@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './Content.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faMouse, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faMouse, faArrowDown, faPaperPlane, faCertificate } from '@fortawesome/free-solid-svg-icons';
 function Content() {
     const bannerBtns = [
         {
@@ -34,13 +34,22 @@ function Content() {
                     <div className={styles.bannerContent}>
                         {/* first introduction */}
                         <div className={styles.bannerTextWrapper}>
-                            <h1>Hi, I'm Hiep</h1>
-                            <h4>Frontend Developer</h4>
-                            <span>Fresh level experience in web and mobile design</span>
+                            <div>
+                                <h1>Hi, I'm Hiep</h1>
+                                <h4>Frontend Developer</h4>
+                                <span>
+                                    Fresh level experience in web and mobile design Fresh level experience in web and
+                                    mobile design Fresh level experience in web and mobile design
+                                </span>
+                                <button>
+                                    <span>Contact Me</span>
+                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                </button>
+                            </div>
                             <div className={styles.bannerTextScrollDown}>
-                                <FontAwesomeIcon icon={faMouse} color="white" />
+                                <FontAwesomeIcon className={styles.scrollDownIcon} icon={faMouse} />
                                 <span>Scroll down</span>
-                                <FontAwesomeIcon icon={faArrowDown} color="white" />
+                                <FontAwesomeIcon className={styles.scrollDownIcon} icon={faArrowDown} color="white" />
                             </div>
                         </div>
                         {/* avatar */}
@@ -56,12 +65,30 @@ function Content() {
                     </div>
                 </div>
                 <div className={clsx('section')}>
-                    <div className={clsx('section__title')}>About</div>
-                    <div className={clsx('section__subtitle')}>My Introduction</div>
-                    <div className={styles.content}></div>
+                    <div className={clsx('section__title')}>Education</div>
+                    <div className={clsx('section__subtitle')}>My personal journey</div>
+                    <div className={styles.content}>
+                        <div className={styles.education__imageWrapper}>
+                            <img src='./assets/uit.jpg' />
+                        </div>
+                        <div className={styles.education__textWrapper}>
+                            <span>27/08/2018 - NOW</span>
+                            <h3>UNIVERSITY OF INFORMATION TECHNOLOGY</h3>
+                            <h4>Major: Information Technology</h4>
+                            <span>GPA: 8.09/10</span>
+                            {/* awards */}
+                            <div>
+                                <div>
+                                    <FontAwesomeIcon icon={faCertificate} color="white" />
+                                    <h3>Awards</h3>
+                                </div>
+                                <span>UIT academic encouraging Scholarship in 1st semester 2021-2022</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className={clsx('section')}>
-                    <div className={clsx('section__title')}>About</div>
+                    <div className={clsx('section__title')}>Skills</div>
                     <div className={clsx('section__subtitle')}>My Introduction</div>
                     <div className={styles.content}></div>
                 </div>

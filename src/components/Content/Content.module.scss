@@ -25,27 +25,44 @@
     margin: 5px 0px;
 }
 .bannerContent {
+    margin-top: 50px;
     display: flex;
     flex: 1;
-    align-items: center;
-    background-color: grey;
     padding: 0 8%;
 }
 .bannerTextWrapper {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
     width: 50%;
-    h1 {
-        margin-bottom: 10px;
-    }
-    h4 {
-        margin-bottom: 5px;
-    }
-    h4 ~ span {
-        margin-bottom: 10px;
+    div {
+        h1 {
+            font-size: var(--big-font-size);
+            margin-bottom: 10px;
+        }
+        h4 {
+            margin-bottom: 15px;
+        }
+        h4 ~ span {
+            display: block;
+            margin-bottom: 25px;
+        }
     }
 }
 .bannerTextScrollDown {
-    width: 50%;
-
+    margin-bottom: -50px;
+    display: flex;
+    align-items: center;
+    span {
+        font-size: var(--small-font-size);
+        font-weight: var(--font-semi-bold);
+        margin: 0 10px;
+    }
+    .scrollDownIcon {
+        color: var(--first-color);
+    }
 }
 
 .image {
@@ -55,9 +72,46 @@
 .imageMaskImage {
     width: 170px;
 }
-/*=============== 2.ABOUT ===============*/
-/*=============== 3.EDUCATION ===============*/
-/*=============== 4.SKILLS ===============*/
-/*=============== 5.PROJECTS ===============*/
-/*=============== 6.CONTACTME ===============*/
 
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    // background-color: aquamarine;
+}
+/*=============== 2.EDUCATION ===============*/
+.education__imageWrapper {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    img {
+        width: 70%;
+        border-radius: 5px;
+    }
+}
+.education__textWrapper {
+    align-self: center;
+    span {
+        font-size: var(--normal-font-size);
+    }
+    h3 {
+        margin: 5px 0px;
+    }
+    h4 {
+        margin-bottom: 15px;
+    }
+    div {
+        margin-top: 20px;
+        div {
+            display: flex;
+            align-items: center;
+            h3 {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+/*=============== 3.SKILLS ===============*/
+/*=============== 4.PROJECTS ===============*/
+/*=============== 5.CONTACTME ===============*/

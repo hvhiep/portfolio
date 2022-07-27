@@ -24,10 +24,9 @@ function Header() {
                 </h1>
                 <nav className={styles.nav}>
                     <a className={styles.nav__link} href="#">Home</a>
-                    <a className={styles.nav__link} href="#About">About</a>
                     <a className={styles.nav__link} href="#Education">Education</a>
                     <a className={styles.nav__link} href="#Skills">Skills</a>
-                    <a className={styles.nav__link} href="#Project">Project</a>
+                    <a className={styles.nav__link} href="#Project">Projects</a>
                     <a className={styles.nav__link} href="#ContactMe">ContactMe</a>
                 </nav>
             </div>
