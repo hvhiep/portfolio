@@ -42,14 +42,12 @@
             font-size: var(--big-font-size);
             margin-bottom: 10px;
         }
-        h4 {
-            margin-bottom: 15px;
-        }
-        h4 ~ span {
+        h1 ~ span {
             display: block;
-            margin-bottom: 25px;
+            margin-top: 10px;
+            margin-bottom: 35px;
         }
-        div {
+        span ~ div {
             a:first-child {
                 margin-right: 20px;
             }
@@ -86,12 +84,20 @@
 /*=============== 2.EDUCATION ===============*/
 .education__imageWrapper {
     width: 45%;
+    padding: 10px;
     img {
-        width: 70%;
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 5px;
     }
 }
 .education__textWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     span {
         font-size: var(--normal-font-size);
     }
@@ -99,10 +105,10 @@
         margin: 5px 0px;
     }
     h4 {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     div {
-        margin-top: 20px;
+        margin-top: 10px;
         div {
             display: flex;
             align-items: center;
@@ -192,6 +198,7 @@
 }
 // thông tin của project
 .project__itemRightWrapper {
+    padding-left: 10px;
     width: 50%;
     h1 {
         margin-bottom: 20px;
@@ -210,10 +217,10 @@
     ul {
         margin-bottom: 10px;
         list-style: circle;
-        list-style-position: inside;
+        list-style-position: outside;
         li {
             margin-top: 20px;
-            margin-left: 10px;
+            margin-left: 30px;
         }
     }
     .bold {
@@ -251,5 +258,199 @@
         color: var(--title-color);
         font-size: var(--h3-font-size);
         margin-bottom: 15px;
+    }
+}
+
+/*============= RESPONSIVE =============*/
+// TABLET: width > 740px and < 1024px
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375rem) {
+    //BANNER
+    .bannerTextWrapper {
+        div {
+            span ~ div {
+                a {
+                    margin-right: 20px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    .bannerTextScrollDown {
+        margin-top: 20px;
+    }
+
+    //EDUCATION
+
+    //SKILLS
+
+    //PROJECTS
+    .projectWrapper {
+    }
+    .project__item {
+        width: 100%;
+        .project__itemRightWrapper {
+            width: 50%;
+            h1 {
+                margin-bottom: 10px;
+            }
+            .project__itemRightTextGroup {
+                margin-bottom: 10px;
+            }
+            ul {
+                margin-bottom: 10px;
+                li {
+                    margin-top: 10px;
+                    margin-left: 15px;
+                }
+            }
+            .project__itemBtnWrapper {
+                margin-top: 20px;
+                a:first-child {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    //CONTACTME
+    .contact__item {
+        margin: 0 1rem;
+    }
+}
+
+// MOBILE: width < 740px
+@media only screen and (max-width: 46.1875em) {
+    .inner {
+        width: 95%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .banner {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        .bannerBtnWrapper {
+            flex-direction: row;
+            margin-top: 30px;
+            a {
+                margin: 0px 5px;
+            }
+        }
+        .bannerContent {
+            flex-direction: column-reverse;
+            align-items: center;
+
+            .bannerTextWrapper {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+                .bannerTextScrollDown {
+                    display: none;
+                }
+            }
+        }
+    }
+    //EDUCATION
+    .education {
+        flex-direction: column;
+        align-items: center;
+        .education__imageWrapper {
+            width: 100%;
+            padding: 10px 0px;
+            img {
+                max-width: 90%;
+                height: auto;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 5px;
+            }
+        }
+        .education__textWrapper {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            span {
+                font-size: var(--normal-font-size);
+            }
+            h3 {
+                margin: 5px 0px;
+            }
+            h4 {
+                margin-bottom: 10px;
+            }
+            .education__awardWrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+                div {
+                    display: flex;
+                    align-items: center;
+                    h3 {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+    //SKILLS
+
+    //PROJECTS
+    .projectWrapper {
+    }
+    .project__item {
+        width: 95%;
+        padding: 0 8px;
+        margin-bottom: 30px;
+        .project__itemRightWrapper {
+            width: 50%;
+            h1 {
+                margin-bottom: 10px;
+            }
+            .project__itemRightTextGroup {
+                font-size: var(--small-font-size);
+                margin-bottom: 10px;
+            }
+            ul {
+                font-size: var(--small-font-size);
+                margin-bottom: 10px;
+                li {
+                    margin-top: 10px;
+                    margin-left: 15px;
+                }
+            }
+            .project__itemBtnWrapper {
+                margin-top: 10px;
+                a {
+                    font-size: var(--smaller-font-size);
+                }
+                a:first-child {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    //CONTACTME
+    .contactWrapper {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        .contact__item {
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 35%;
+            .contact__itemIcon {
+                margin-bottom: 5px;
+            }
+            .contact__itemTextTitle {
+                margin-bottom: 10px;
+            }
+        }
     }
 }
