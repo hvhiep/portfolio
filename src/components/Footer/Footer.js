@@ -20,7 +20,8 @@ function Footer() {
     return (
         <footer className={styles.wrapper}>
             <div className={styles.inner}>
-                <div className={styles.title}>Hoang Van Hiep</div>
+                <div 
+                className={styles.title}>Hoang Van Hiep</div>
                 <div className={styles.subtitle}>Frontend Developer</div>
                 <div className={styles.bannerBtnWrapper}>
                     {bannerBtns.map((item, index) => (
